@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.vz7f0.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
+// const uri = "mongodb+srv://<username>:<password>@cluster0.vz7f0.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
   const AllBlogs = client.db("blog").collection("blogList");
